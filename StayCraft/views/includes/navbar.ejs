@@ -1,0 +1,174 @@
+<style>
+/* 🌟 Navbar General */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 0.7rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🌟 Brand Icon */
+.navbar-brand i {
+  font-size: 1.8rem;
+  color: #ff385c;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand i:hover {
+  transform: rotate(-10deg) scale(1.15);
+}
+
+/* 🌟 Nav Links */
+.navbar-nav .nav-link {
+  color: #444;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f7f7f7;
+  color: #000;
+  transform: translateY(-1px);
+}
+
+.navbar-nav .nav-link.active {
+  background-color: #ff385c;
+  color: #fff !important;
+  box-shadow: 0 3px 8px rgba(255, 56, 92, 0.3);
+}
+
+/* 🌟 Search Box (updated) */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: 0.4rem 0.8rem 0.4rem 1.2rem;
+  min-width: 300px;  /* ⬅️ Increased width */
+  max-width: 420px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 0 3px rgba(255, 56, 92, 0.25);
+  border-color: #ff385c;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.95rem;
+  padding-right: 0.5rem;
+  background: transparent;
+}
+
+/* 🌟 Search Button */
+.search-btn {
+  background-color: #ff385c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #e23153;
+  transform: translateY(-1px);
+}
+
+/* 🌟 Right Section Links */
+.navbar-nav.ms-auto .nav-link {
+  margin-left: 0.6rem;
+}
+
+/* 🌟 Toggler Button */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* 🌟 Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+  }
+  .search-bar {
+    min-width: 180px;
+    max-width: 100%;
+  }
+}
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- Left: Logo -->
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-solid fa-compass"></i>
+    </a>
+
+    <!-- Toggle Button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Main Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <!-- Left Nav Links -->
+      <div class="navbar-nav me-auto">
+        <a class="nav-link active" href="/listings">Explore</a>
+      </div>
+
+      <!-- Search Bar (Icon + Input + Icon Text inside) -->
+      <div class="navbar-nav mx-auto">
+        <form class="search-bar" role="search">
+          <input
+            type="search"
+            placeholder="Search destinations"
+            aria-label="Search"
+          />
+          <button class="search-btn" type="submit">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Nav Links -->
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">
+          <i class="fa-solid fa-house"></i> Airbnb your home
+        </a>
+
+        <% if(!currUser) { %>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+        <% } %> 
+
+        <% if(currUser) { %> 
+          <a class="nav-link" href="/logout"><b>Logout</b></a>
+        <% } %>
+      </div>
+
+    </div>
+  </div>
+</nav>

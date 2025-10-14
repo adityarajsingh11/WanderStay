@@ -1,0 +1,221 @@
+<% layout("layouts/boilerplate") %>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+ <!-- styling for this page in style.css -->
+<style>
+
+  /* 🌟 General Styles */
+  /* 🌟 Filters */
+  #filters {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    white-space: nowrap; /* Prevent text wrapping */
+    align-items: center;
+  }
+
+  .filter-chip {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center align items horizontally */
+    gap: 0.2rem; /* Reduced gap for tighter vertical spacing */
+    padding: 0.3rem 0.7rem; /* Smaller padding for compact look */
+    border: none; /* Remove border */
+    border-radius: 1rem; /* Slightly larger radius for rounded look */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    font-size: 0.9rem; /* Smaller font to match image */
+    color: #666; /* Gray color to match image text */
+    text-align: center; /* Center the text below the icon */
+  }
+
+  .filter-chip i {
+    color: #666; /* Gray icons to match image */
+    font-size: 1.3rem; /* Slightly larger icon for better visibility */
+  }
+
+  .filter-chip:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    border-color: #666;
+    color: #333; /* Darker text on hover */
+  }
+
+  /* 🌟 Listings (unchanged, keeping your original style) */
+  .listing-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .listing-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    width: 100%;
+  }
+
+  .listing-card:hover {
+    transform: scale(0.98);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-img-top {
+    height: 15rem;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    color: #666;
+    height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .price-tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-weight: 600;
+    color: #000;
+    font-size: 1rem;
+  }
+
+  .price-tag i {
+    color: #ff385c;
+    margin-right: 4px;
+  }
+
+  .row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .row > [class^="col"] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .tax-info{
+    display: none;
+  }
+
+  .tax-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2rem;
+  height: 3rem;
+  padding: 0 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tax-toggle:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: #aaa;
+}
+
+.tax-toggle .form-check-label {
+  font-size: 0.9rem;
+  color: #444;
+  margin-left: 0.4rem;
+}
+
+.tax-toggle .form-check-input {
+  cursor: pointer;
+  accent-color: #ff385c;  /* Airbnb pink */
+}
+
+
+
+
+</style>
+
+<!-- 🌟 Filters with icons above names -->
+<div id="filters">
+  <div class="filter-chip"><i class="fa-solid fa-fire"></i><span>Trending</span></div>
+  <div class="filter-chip"><i class="fa-solid fa-bed"></i><span>Rooms</span></div>
+  <div class="filter-chip"><i class="fa-solid fa-city"></i><span>Iconic Cities</span></div>
+  <div class="filter-chip"><i class="fa-solid fa-mountain"></i><span>Mountains</span></div>
+  <div class="filter-chip"><i class="fa-solid fa-water"></i><span>Beach</span></div>
+  <div class="filter-chip"><i class="fa-solid fa-person-swimming"></i><span>Amazing Pools</span></div>
+  <div class="filter-chip"><i class="fa-solid fa-campground"></i><span>Camping</span></div>
+  <div class="filter-chip"><i class="fa-solid fa-tractor"></i><span>Farms</span></div>
+  
+  <div class="filter-chip"><i class="fa-solid fa-igloo"></i><span>Domes</span></div>
+  <div class="filter-chip"><i class="fa-solid fa-ship"></i><span>Boats</span></div>
+
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Default switch checkbox input</label>
+    </div>
+  </div>
+
+</div>
+
+<!-- 🌟 Listings -->
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+  <% for (let lists of allListings) { %>
+    <a href="/listings/<%= lists._id %>" class="listing-link">
+      <div class="card col listing-card">
+        <img
+          src="<%= lists.image.url %>"
+          class="card-img-top"
+          alt="Listing Image"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= lists.title %></h5>
+          <p class="card-text"><%= lists.description %></p>
+          <div class="price-tag">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <%= lists.price.toLocaleString("en-IN") %> / night
+            <i class="tax-info"> &nbsp; &nbsp;+15% GST</i>
+          </div>
+        </div>
+      </div>
+    </a>
+  <% } %>
+</div>
+
+<script>
+  let taxSwitched = document.getElementById("switchCheckDefault");
+  taxSwitched.addEventListener("click",() => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for(info of taxInfo){
+      if(info.style.display != "inline"){
+        info.style.display = "inline";
+      }
+      else{
+        info.style.display = "none";
+      }
+    }
+  });
+</script>
