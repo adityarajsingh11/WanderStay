@@ -1,0 +1,295 @@
+<% layout("layouts/boilerplate") %>
+
+<style>
+/* 🌍 GLOBAL */
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌇 HERO SECTION */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
+    url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80")
+      no-repeat center center/cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 15px;
+}
+
+.hero-content {
+  max-width: 700px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  margin-top: 10px;
+}
+
+.hero-btn {
+  margin-top: 30px;
+  background-color: #ff385c;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 56, 92, 0.4);
+}
+
+.hero-btn:hover {
+  background-color: #e23153;
+  transform: scale(1.05);
+}
+
+/* 🌟 FEATURES SECTION */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 20px;
+  background: #fafafa;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.feature {
+  max-width: 250px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feature i {
+  font-size: 2.4rem;
+  color: #ff385c;
+  margin-bottom: 10px;
+}
+
+.feature h4 {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* 🌍 WHY WANDERSTAY */
+.why-section {
+  background: linear-gradient(135deg, #fff5f6, #ffe8ec, #fff5f6);
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.why-section h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #ff385c, #ff7382);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.why-section > p {
+  max-width: 750px;
+  margin: 0 auto 50px;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* WHY SECTION CARDS */
+.why-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.why-card {
+  background: #fff;
+  width: 260px;
+  border-radius: 18px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(255, 56, 92, 0.2);
+}
+
+.why-card i {
+  font-size: 2.3rem;
+  color: #ff385c;
+  margin-bottom: 15px;
+  background: rgba(255, 56, 92, 0.08);
+  padding: 15px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.why-card:hover i {
+  background: #ff385c;
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+.why-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ✨ ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .why-card {
+    width: 90%;
+  }
+
+  .feature {
+    width: 90%;
+  }
+}
+</style>
+
+<!-- 🌇 HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to WanderStay</h1>
+    <p>
+      Your all-in-one platform to explore dream stays, connect with hosts,
+      and travel smart.
+    </p>
+    <a href="/listings" class="hero-btn">Explore Listings</a>
+  </div>
+</section>
+
+<!-- 🌟 FEATURES -->
+<section class="features">
+  <div class="feature">
+    <i class="fa-solid fa-user-lock"></i>
+    <h4>Easy Authentication</h4>
+    <p>Sign up in seconds and access your account securely from anywhere.</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-house-circle-check"></i>
+    <h4>Host Your Stay</h4>
+    <p>Become a WanderStay host and earn by listing your property hassle-free.</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-wallet"></i>
+    <h4>Cost-Effective</h4>
+    <p>Affordable stays and transparent pricing for every budget traveler.</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-headset"></i>
+    <h4>24/7 Support</h4>
+    <p>We’re here for you anytime — travel with confidence and peace of mind.</p>
+  </div>
+</section>
+
+<!-- 🌍 WHY WANDERSTAY -->
+<section class="why-section">
+  <h2>Why Choose WanderStay?</h2>
+  <p>
+    WanderStay isn’t just about finding a place to sleep — it’s about
+    discovering places to belong. Whether you’re traveling solo, as a family,
+    or as a host opening your doors to the world, WanderStay ensures every
+    experience feels personal, authentic, and secure.
+  </p>
+
+  <div class="why-cards">
+    <div class="why-card">
+      <i class="fa-solid fa-globe"></i>
+      <h4>Global Reach</h4>
+      <p>
+        Explore unique stays across continents — from mountain retreats to
+        seaside villas.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <i class="fa-solid fa-hand-holding-heart"></i>
+      <h4>Trusted Community</h4>
+      <p>
+        Join a growing network of hosts and guests built on transparency and
+        care.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h4>Verified Safety</h4>
+      <p>
+        Every stay is verified for quality and safety, so you can travel
+        stress-free.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <i class="fa-solid fa-wallet"></i>
+      <h4>Affordable Luxury</h4>
+      <p>
+        Experience top-rated accommodations at prices that fit your travel
+        goals.
+      </p>
+    </div>
+  </div>
+</section>

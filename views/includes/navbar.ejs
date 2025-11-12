@@ -1,57 +1,58 @@
 <style>
-/* 🌟 Navbar General */
+/* 🌍 WanderStay Navbar Styling */
 .navbar {
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  padding: 0.7rem 2rem;
-  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  z-index: 100;
 }
 
-/* 🌟 Brand Icon */
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+}
+
 .navbar-brand i {
   font-size: 1.8rem;
   color: #ff385c;
+  margin-right: 8px;
   transition: transform 0.3s ease;
 }
 
-.navbar-brand i:hover {
-  transform: rotate(-10deg) scale(1.15);
+.navbar-brand:hover i {
+  transform: rotate(-10deg) scale(1.1);
 }
 
-/* 🌟 Nav Links */
-.navbar-nav .nav-link {
-  color: #444;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.6rem 1rem;
-  border-radius: 2rem;
-  transition: all 0.3s ease;
+/* Center Nav */
+.navbar-nav .nav-link.brand-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ff385c !important;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-  background-color: #f7f7f7;
-  color: #000;
-  transform: translateY(-1px);
+.navbar-nav .nav-link.brand-text:hover {
+  color: #e23153 !important;
 }
 
-.navbar-nav .nav-link.active {
-  background-color: #ff385c;
-  color: #fff !important;
-  box-shadow: 0 3px 8px rgba(255, 56, 92, 0.3);
-}
-
-/* 🌟 Search Box (updated) */
+/* Search Bar */
 .search-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 50px;
-  padding: 0.4rem 0.8rem 0.4rem 1.2rem;
-  min-width: 300px;  /* ⬅️ Increased width */
-  max-width: 420px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 0.4rem 1rem;
+  min-width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -65,18 +66,16 @@
   outline: none;
   flex: 1;
   font-size: 0.95rem;
-  padding-right: 0.5rem;
   background: transparent;
 }
 
-/* 🌟 Search Button */
 .search-btn {
   background-color: #ff385c;
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,40 +87,57 @@
   transform: translateY(-1px);
 }
 
-/* 🌟 Right Section Links */
+/* Right Side */
 .navbar-nav.ms-auto .nav-link {
-  margin-left: 0.6rem;
+  margin-left: 0.8rem;
+  color: #444;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
-/* 🌟 Toggler Button */
-.navbar-toggler {
-  border: none;
+.navbar-nav.ms-auto .nav-link:hover {
+  background-color: #f7f7f7;
+  color: #000;
+  transform: translateY(-1px);
 }
 
-.navbar-toggler:focus {
-  box-shadow: none;
+/* 👤 Username styling */
+.username {
+  font-weight: 600;
+  color: #ff385c;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: #fff5f6;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
-/* 🌟 Responsive Adjustments */
+.username i {
+  margin-right: 6px;
+  color: #ff385c;
+}
+
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.7rem 1rem;
+    padding: 0.7rem 1.3rem;
   }
   .search-bar {
     min-width: 180px;
-    max-width: 100%;
   }
 }
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md sticky-top">
   <div class="container-fluid">
-    <!-- Left: Logo -->
-    <a class="navbar-brand" href="/listings">
+    <!-- Brand -->
+    <a class="navbar-brand" href="/">
       <i class="fa-solid fa-compass"></i>
+      <span>WanderStay</span>
     </a>
 
-    <!-- Toggle Button -->
+    <!-- Toggler -->
     <button
       class="navbar-toggler"
       type="button"
@@ -131,40 +147,35 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Main Navbar Content -->
+    <!-- Navbar Content -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-      <!-- Left Nav Links -->
-      <div class="navbar-nav me-auto">
-        <a class="nav-link active" href="/listings">Explore</a>
+      
+      <div class="navbar-nav mx-auto">
+        <a class="nav-link brand-text" href="/listings">Discover Stays</a>
       </div>
 
-      <!-- Search Bar (Icon + Input + Icon Text inside) -->
-      <div class="navbar-nav mx-auto">
+      <div class="navbar-nav">
         <form class="search-bar" role="search">
-          <input
-            type="search"
-            placeholder="Search destinations"
-            aria-label="Search"
-          />
+          <input type="search" placeholder="Search destinations..." />
           <button class="search-btn" type="submit">
             <i class="fa-solid fa-search"></i>
           </button>
         </form>
       </div>
 
-      <!-- Right Nav Links -->
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">
-          <i class="fa-solid fa-house"></i> Airbnb your home
+          <i class="fa-solid fa-house"></i> List your stay
         </a>
 
-        <% if(!currUser) { %>
+        <% if (!currUser) { %>
           <a class="nav-link" href="/signup"><b>Sign Up</b></a>
           <a class="nav-link" href="/login"><b>Login</b></a>
-        <% } %> 
-
-        <% if(currUser) { %> 
+        <% } else { %>
+          <div class="username">
+            <i class="fa-solid fa-user"></i>
+            <%= currUser.username %>
+          </div>
           <a class="nav-link" href="/logout"><b>Logout</b></a>
         <% } %>
       </div>

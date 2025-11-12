@@ -1,16 +1,81 @@
+<style>
+footer {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 18px 0; /* slightly more balanced padding */
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 0;
+}
+
+.f-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  line-height: 1.6;
+}
+
+/* 🌟 Social Icons */
+.f-info-socials a {
+  color: #ff385c;
+  margin: 0 8px;
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.f-info-socials a:hover {
+  color: #e23153;
+  transform: translateY(-2px);
+}
+
+/* ✨ Text Styling */
+.f-info-brand {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Ensure there's always a visible gap after "Built by" */
+.f-info-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* guaranteed space between text and name */
+}
+
+.f-info-brand span {
+  color: #ff385c; /* highlight color for your name */
+  font-weight: 600;
+}
+
+/* keep layout tidy on small screens */
+@media (max-width: 768px) {
+  .f-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>
+
 <footer>
-    <div class="f-info">
-        <div class="f-info-socials">
-            <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
-        </div>
-        <div class="f-info-brand"> &copy; Wanderlust Private Limited</div>
-        <div class="f-info-links">
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-
-        </div>
-
+  <div class="f-info">
+    <!-- Use a dedicated class so spacing only affects the author line -->
+    <div class="f-info-brand f-info-author">
+      Built by <span>Aditya Raj Singh</span>
     </div>
+
+    <div class="f-info-socials">
+      <a href="https://github.com/adityarajsingh11" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+      <a href="https://x.com/_op_aditya_11" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/adityarajsingh117/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+    <div class="f-info-brand">
+      © 2025 WanderStay Private Limited
+    </div>
+  </div>
 </footer>
