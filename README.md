@@ -88,7 +88,7 @@ WanderStay/
 ├── public/       # Static assets (served publicly)
 │ ├── css/        # Custom CSS styles
 │ ├── js/        # Client-side JS scripts
-│ └── images   / # Images used in UI
+│ └── images/    # Images used in UI
 │
 ├── views/       # EJS templates for rendering pages
 │ ├── listings/  # Listing-related views
