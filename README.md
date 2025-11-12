@@ -107,3 +107,40 @@ WanderStay/
 └── README.md   # Project documentation
 ```
 
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run **WanderStay** locally 🧠
+
+### 🪄 Step 1: Clone the Repository
+```bash
+git clone https://github.com/adityarajsingh11/WanderStay.git
+cd WanderStay
+```
+### 📦 Step 2: Install Dependencies
+```bash
+npm install
+```
+### ⚙️ Step 3: Setup Environment Variables
+
+Create a .env file in the root directory and add:
+
+```bash
+CLOUD_NAME=your_cloud_name
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_API_SECRET=your_cloudinary_secret
+
+```
+
+### 🍃 Step 4: Start MongoDB
+```
+mongod
+```
+### 🚀 Step 5: Run the Server
+```
+nodemon app.js
+```
+Then visit:
+👉 http://localhost:8080
