@@ -1,31 +1,56 @@
 <% layout("layouts/boilerplate") %>
 
 <div class="row mt-3">
-    <h1 class="col-6 offset-3">Login</h1>
-    <div class="col-6 offset-3">
-        <form action="/login" method="POST" class="needs-validation" novalidate>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input 
-                name="username"  
-                type="text"
-                id="username" 
-                class="form-control"  
-                required />
-                
-            </div>
-            
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input 
-                name="password"  
-                type="password"
-                id="password" 
-                class="form-control"  
-                required />
-            </div>
-            <button type="submit" class="btn btn-success">Login</button>
+  <h1 class="col-6 offset-3">Login</h1>
+  <div class="col-6 offset-3">
+    <form action="/login" method="POST" class="needs-validation" novalidate>
+      
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          name="username"
+          type="text"
+          id="username"
+          class="form-control"
+          required
+        />
+      </div>
 
-        </form>
-    </div>
-</div>        
+      <div class="mb-3 position-relative">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <input
+            name="password"
+            type="password"
+            id="password"
+            class="form-control"
+            required
+          />
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            id="togglePassword"
+            tabindex="-1"
+          >
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Login</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordField = document.getElementById("password");
+  const eyeIcon = togglePassword.querySelector("i");
+
+  togglePassword.addEventListener("click", () => {
+    const isPassword = passwordField.type === "password";
+    passwordField.type = isPassword ? "text" : "password";
+    eyeIcon.classList.toggle("fa-eye");
+    eyeIcon.classList.toggle("fa-eye-slash");
+  });
+</script>
