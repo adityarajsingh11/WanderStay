@@ -144,3 +144,46 @@ nodemon app.js
 ```
 Then visit:
 👉 http://localhost:8080
+
+---
+
+## 🧭 Usage Guide
+
+Follow these simple steps to get started with **WanderStay** 🌍  
+
+1. 🔐 **Sign Up / Log In**  
+   Create your WanderStay account or log in securely to access personalized features.
+
+2. 🏠 **Create a New Listing**  
+   List your property by uploading images, adding a title, price, description, and exact location.
+
+3. 🌇 **Explore Amazing Stays**  
+   Browse through beautiful listings across different destinations — view each stay directly on the map.
+
+4. ⭐ **Leave Reviews & Ratings**  
+   Share your experience by leaving detailed reviews and rating properties you’ve visited.
+
+5. 🧹 **Manage Your Listings**  
+   Edit or delete your own listings anytime from your dashboard.
+
+6. 🚪 **Log Out Securely**  
+   End your session safely — your account and data remain protected.
+
+> 💡 *WanderStay makes exploring, hosting, and connecting effortless — wherever you go.*
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — you’re free to use, modify, and distribute it for personal or commercial purposes.
+
+By using or contributing to WanderStay, you agree to:
+
+- Give appropriate credit to the author  
+- Provide a link to this repository when sharing derived work  
+- Include the same license in any redistributed copies  
+
+---
+
+**Copyright © 2025 [Aditya Raj Singh](https://github.com/adityarajsingh11)**  
+💼 *WanderStay — Explore. Host. Travel.*
