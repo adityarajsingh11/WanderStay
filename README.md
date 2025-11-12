@@ -169,7 +169,7 @@ Follow these simple steps to get started with **WanderStay** 🌍
 6. 🚪 **Log Out Securely**  
    End your session safely — your account and data remain protected.
 
-> 💡 *WanderStay makes exploring, hosting, and connecting effortless — wherever you go.*
+ 💡 *WanderStay makes exploring, hosting, and connecting effortless — wherever you go.*
 
 ---
 
@@ -185,5 +185,10 @@ By using or contributing to WanderStay, you agree to:
 
 ---
 
-**Copyright © 2025 [Aditya Raj Singh](https://github.com/adityarajsingh11)**  
-💼 *WanderStay — Explore. Host. Travel.*
+## 💬 Contact
+
+👨‍💻 **Aditya Raj Singh**  
+📧 Email: [9555adityarajsingh@gmail.com](mailto:9555adityarajsingh@gmail.com)  
+🐙 GitHub: [@adityarajsingh11](https://github.com/adityarajsingh11)  
+💼 LinkedIn: [@adityarajsingh117](https://linkedin.com/in/adityarajsingh117)  
+🐦 X (Twitter): [@_op_aditya_11](https://x.com/_op_aditya_11)
