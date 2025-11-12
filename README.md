@@ -68,45 +68,42 @@ All listings, users, and reviews are stored securely using **Mongoose ORM**.
 ---
 
 ## 🗂️ Folder Structure
-
+```
 WanderStay/
-├── models/
-│ ├── listing.js
-│ ├── review.js
-│ └── user.js
+├── models/ # Mongoose schemas for database collections
+│ ├── listing.js  # Listing (property) model schema
+│ ├── review.js   # Review model schema
+│ └── user.js     # User authentication model
 │
-├── routes/
-│ ├── listing.js
-│ ├── review.js
-│ └── user.js
+├── routes/       # Express route handlers for modular routing
+│ ├── listing.js  # Routes for listings (CRUD operations)
+│ ├── review.js   # Routes for reviews (add/delete)
+│ └── user.js     # Routes for user authentication (login/signup)
 │
-├── controllers/
-│ ├── listing.js
-│ ├── review.js
-│ └── user.js
+├── controllers/  # Controller logic for separating route logic
+│ ├── listing.js  # Handles listing operations
+│ ├── review.js   # Handles review operations
+│ └── user.js     # Handles user registration & login
 │
-├── public/
-│ ├── css/
-│ ├── js/
-│ └── images/
+├── public/       # Static assets (served publicly)
+│ ├── css/        # Custom CSS styles
+│ ├── js/        # Client-side JS scripts
+│ └── images   / # Images used in UI
 │
-├── views/
-│ ├── listings/
-│ ├── includes/
-│ ├── layouts/
-│ ├── users/
-│ └── home.ejs
+├── views/       # EJS templates for rendering pages
+│ ├── listings/  # Listing-related views
+│ ├── includes/  # Reusable components (navbar, footer, etc.)
+│ ├── layouts/   # Base layouts using EJS-Mate
+│ ├── users/     # Login, signup pages
+│ └── home.ejs   # Main home page
 │
-├── utils/
-│ ├── ExpressError.js
-│ └── wrapAsync.js
+├── utils/       # Utility/helper functions
+│ ├── ExpressError.js # Custom error class for handling errors
+│ └── wrapAsync.js  # Async wrapper for cleaner async route handling
 │
-├── .env
-├── app.js
-├── package.json
-└── README.md
-
----
-
-
+├── .env        # Environment variables (API keys, secrets)
+├── app.js      # Main Express application file (entry point)
+├── package.json # Project dependencies & scripts
+└── README.md   # Project documentation
+```
 
